@@ -7,11 +7,3 @@ fn main() {
     println!("{}", rev_str("How old are You"));
     println!("{}", rev_str("ex: this is an example água"));
 }
-
-// $ cargo run
-// !dlrow ,olleH
-// namoR si eman ym ,olleH
-// !rac ecin a evah I
-// uoY era dlo woH
-// augá elpmaxe na si siht :xe
-// $
