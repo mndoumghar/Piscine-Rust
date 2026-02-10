@@ -7,5 +7,5 @@ pub fn initials(names: Vec<&str>) -> Vec<String> {
             word.split_whitespace()
             .map(|c| c.chars().next().expect("").to_string() + ".").collect::<Vec<String>>().join(" ")
     })
-    .collect()
+    .collect::<Vec<String>>()
 }
