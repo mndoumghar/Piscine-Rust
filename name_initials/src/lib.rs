@@ -3,9 +3,18 @@ pub fn initials(names: Vec<&str>) -> Vec<String> {
     names  
     .iter()
     .map(|word| 
-    {
-            word.split_whitespace()
-            .map(|c| c.chars().next().expect("").to_string() + ".").collect::<Vec<String>>().join(" ")
+        {
+            let mut res : String = String::new();
+            let mut count: i32 = 0;
+
+            for c in word.split_whitespace() {
+                if count>0 {
+                    res.push_str(". ");
+                }
+                res.push(c.chars().next().expect("hiy li bghat"));    
+                count+= 1;
+            }
+            res
     })
-    .collect::<Vec<String>>()
+    .collect()
 }
