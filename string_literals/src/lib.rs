@@ -16,7 +16,7 @@ pub fn is_contains(v: &str, pat: &str) -> bool {
 }
 
 pub fn split_at(v: &str, index: usize) -> (&str, &str) {
-        v.split_at(index)
+        v.split_at(index) 
 }
 
 pub fn find(v: &str, pat: char) -> usize {
