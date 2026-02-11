@@ -1,7 +1,7 @@
-pub fn sum(a: &[i32;10]) -> i32 {
+pub fn sum(a: &[i32]) -> i32 {
     let mut count  = 0;
     for num in a {
-       count += *num;  
+       count += num;  
     }
 
     count
