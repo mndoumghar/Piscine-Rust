@@ -1,4 +1,6 @@
-use rand::prelude::*;
+// use rand::prelude::*;
+use rand::Rng;
+
 #[derive(Debug, PartialEq)]
 pub enum Suit {
     Heart,
@@ -19,7 +21,7 @@ pub enum Rank {
     
 impl Suit {  
     pub fn random() -> Suit {
-        let mut rng = rand::rng();
+        let mut rng = rand::thread_rng();
         Suit::translate(rng.random_range(1..=4))
     }
 
@@ -35,8 +37,8 @@ impl Suit {
 }
 impl Rank {
     pub fn random() -> Rank {
-        let mut rng = rand::rng();
-        Rank::translate(rng.random_range(1..= 8))
+        let mut rng = rand::thread_rng();
+        Rank::translate(rng.random_range(1..= 13))
     }
     pub fn translate(value: u8) -> Rank {
         match value {
