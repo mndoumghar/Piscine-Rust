@@ -10,8 +10,9 @@ pub fn arrange_phrase(phrase: &str) -> String {
             }
         }
     }
+
     place.sort();
-    
+
     for ph in phrase.split_whitespace() {
         for ch in ph.chars() {
             if let Some(digit) = ch.to_digit(10) {
@@ -24,8 +25,19 @@ pub fn arrange_phrase(phrase: &str) -> String {
             }
         }
     }
+    
+    let mut res = String::new();
+    for (i, ph) in matrix.clone().into_iter().enumerate() {
+        for ch in ph.chars() {
+            if !ch.is_digit(10) {
+                res.push(ch);
+            }
+        }
 
- 
+        if matrix.len() -1  != i {
+            res.push(' ');
+        }
+    }
 
-    matrix.join(" ").chars().filter(|c| c.is_alphabetic() || c.is_whitespace()).collect()
+    res
 }
