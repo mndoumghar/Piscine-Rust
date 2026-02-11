@@ -3,7 +3,7 @@ use arrays::*;
 fn main() {
     let mut i: i32= 0;
 
-    let mut a : [i32;10]= [0;10].map(|mut x| {
+    let  a : [i32;10]= [0;10].map(|mut x| {
         i+=1;
         x+=i;
         x
