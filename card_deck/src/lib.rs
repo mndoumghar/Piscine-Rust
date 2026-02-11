@@ -1,5 +1,4 @@
-// use rand::prelude::*;
-use rand::Rng;
+use rand::prelude::*;
 
 #[derive(Debug, PartialEq)]
 pub enum Suit {
@@ -21,7 +20,7 @@ pub enum Rank {
     
 impl Suit {  
     pub fn random() -> Suit {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
         Suit::translate(rng.random_range(1..=4))
     }
 
@@ -37,7 +36,7 @@ impl Suit {
 }
 impl Rank {
     pub fn random() -> Rank {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
         Rank::translate(rng.random_range(1..= 13))
     }
     pub fn translate(value: u8) -> Rank {
@@ -52,7 +51,7 @@ impl Rank {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 
 pub struct Card {
     pub suit: Suit,
@@ -60,7 +59,10 @@ pub struct Card {
 }
 
 pub fn winner_card(card: &Card) -> bool {
-    card.suit == Suit::Spade && card.rank == Rank::Ace
+    if card.suit == Suit::Spade && card.rank == Rank::Ace {
+        return true;
+    } 
+    return false
 }
 
 
