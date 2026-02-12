@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 pub fn is_permutation(s1: &str, s2: &str) -> bool {
     let mut map = HashMap::new();
-    if s1.len() != s2.len() {
+    if s1.chars().count() != s2.chars().count() {
         return false;
     }
     for ch in s1.chars() {
@@ -23,5 +23,5 @@ pub fn is_permutation(s1: &str, s2: &str) -> bool {
         }
     }
 
-    count == s1.len()
+    count == s1.chars().count()
 }
