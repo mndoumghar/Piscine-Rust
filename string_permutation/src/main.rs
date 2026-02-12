@@ -3,7 +3,7 @@ use string_permutation::*;
 
 fn main() {
     let word = "thought";
-    let word1 ="thought";
+    let word1 ="thvught";
 
     println!(
         "Is {:?} a permutation of {:?}? = {}",

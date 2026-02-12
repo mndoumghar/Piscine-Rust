@@ -6,6 +6,10 @@ pub fn is_permutation(s1: &str, s2: &str) -> bool {
         return false;
     }
 
+    if  s1 != s2{
+        return false;
+    }
+
     for ch in s1.chars() {
         *map.entry(ch).or_insert(0) += 1;
     }
