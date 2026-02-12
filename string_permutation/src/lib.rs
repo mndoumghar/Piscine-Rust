@@ -6,10 +6,6 @@ pub fn is_permutation(s1: &str, s2: &str) -> bool {
         return false;
     }
 
-    if  s1 != s2{
-        return false;
-    }
-
     for ch in s1.chars() {
         *map.entry(ch).or_insert(0) += 1;
     }
@@ -18,18 +14,18 @@ pub fn is_permutation(s1: &str, s2: &str) -> bool {
     for ch in s2.chars() {
         *map2.entry(ch).or_insert(0) += 1;
     }
-
     println!("{:?} ", map);
     println!("{:?} ", map2);
-    let mut count1 = 0;
-    let mut count2 = 0;
-    for value in map.values() {
-        count1 += value;
+    let mut count = 0;
+    for (key1, value1) in &map {
+        for (key2, value2) in &map2 {
+            if key1 == key2 && value1 == value2 {
+                count += value1;
+                continue;
+            }
+        }
     }
+    println!("{} --- {}", count, s1.len());
 
-    for value in map2.values() {
-        count2 += value;
-    }
-
-    count1 == count2
+    count == s1.len()
 }
