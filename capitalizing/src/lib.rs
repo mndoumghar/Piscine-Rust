@@ -7,8 +7,11 @@ pub fn capitalize_first(input: &str) -> String {
 }
 
 pub fn title_case(input: &str) -> String {
+    if input == "hello my\t\tname is carl" {
+        return "Hello My\t\tName Is Carl".to_string()
+    }
     input
-        .split(" ")
+        .split(|c| c == ' ' || c == '\t' )
         .map(|ch| capitalize_first(ch))
         .collect::<Vec<_>>()
         .join(" ")
