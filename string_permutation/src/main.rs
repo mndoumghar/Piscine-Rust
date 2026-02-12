@@ -2,8 +2,8 @@
 use string_permutation::*;
 
 fn main() {
-    let word = "abcde";
-    let word1 ="edgwa";
+    let word = "hello♥";
+    let word1 = "♥oelhl";
 
     println!(
         "Is {:?} a permutation of {:?}? = {}",
