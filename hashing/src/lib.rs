@@ -12,7 +12,7 @@ let  len = list.len() ;
     if len % 2 != 0 {
         return res[len/2];
     }
-    res[(len / 2) - 1]
+    (res[(len / 2) - 1] + res[len/2]) / 2 
 }
 
 
