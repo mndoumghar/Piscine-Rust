@@ -1,4 +1,5 @@
-use std::fs;
+use std::{fs, io::Write};
+use tempfile::NamedTempFile;
 
 fn main() {
     let path = "a.txt";
@@ -6,11 +7,5 @@ fn main() {
     handling::open_or_create(&path, "content to be written");
 
     let contents = fs::read_to_string(path).unwrap();
-
     println!("{}", contents);
 }
-
-// And its output:
-// $ cargo run
-// content to be written
-// $
