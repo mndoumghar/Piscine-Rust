@@ -1,0 +1,24 @@
+pub enum Security {
+    Unknown,
+    Message,
+    Warning,
+    NotFound,
+    UnexpectedUrl,
+}
+
+
+pub fn fetch_data(server: Result<&str, &str>, security_level: Security) -> String {
+    
+            match server {
+                Result::Ok(s) => s.to_string(),
+                Result::Err(e) => match security_level {
+                        Security::Warning => "WARNING: check the server".to_string(),
+                        Security::Message => panic!("ERROR: program stops"),
+                        Security::NotFound => format!("Not found: {}",e),
+                        Security::Unknown => panic!(),
+                        Security::UnexpectedUrl => panic!("{}",e),
+                },
+            }
+
+    }
+

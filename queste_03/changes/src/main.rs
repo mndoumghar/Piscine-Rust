@@ -16,6 +16,6 @@ And its expected output
 $ cargo run
 brightness = 0
 new brightness = 200
-$
+$0
 
 */
