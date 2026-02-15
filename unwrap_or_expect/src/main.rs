@@ -5,8 +5,7 @@ fn main() {
     println!("{}", fetch_data(Err("server.com"), Security::Warning));
     println!("{}", fetch_data(Err("server2.com"), Security::NotFound));
 
-    // Panics with no custom message
-    // fetch_data(Err("ERROR CRITICAL"), Security::Unknown);
+ println!("{}",fetch_data(Err("ERROR CRITICAL"), Security::Unknown));
 
     // Panics with the message "ERROR: program stops"
     // fetch_data(Err("server.com"), Security::Message);
