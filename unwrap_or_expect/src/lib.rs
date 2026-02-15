@@ -15,7 +15,7 @@ pub fn fetch_data(server: Result<&str, &str>, security_level: Security) -> Strin
                         Security::Warning => "WARNING: check the server".to_string(),
                         Security::Message => panic!("ERROR: program stops"),
                         Security::NotFound => format!("Not found: {}",e),
-                        Security::Unknown => e.unwrap(),
+                        Security::Unknown => server.unwrap(),
                         Security::UnexpectedUrl => panic!("{}",e),
                 },
             }
