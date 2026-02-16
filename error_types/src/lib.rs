@@ -46,7 +46,7 @@ impl Form {
             .chars()
             .any(|c| !c.is_ascii_alphanumeric() && c.is_ascii());
 
-        if !(a && b && c && d) {
+        if !((a || b) && c && d) {
             return Err(FormError::new(
                 "password",
                 self.password.clone(),
