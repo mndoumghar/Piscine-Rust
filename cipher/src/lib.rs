@@ -1,4 +1,6 @@
 #[derive(Debug, PartialEq)]
+
+
 pub struct CipherError {
     expected: String,
 }
@@ -17,11 +19,12 @@ pub fn cipher(original: &str, ciphered: &str) -> Result<(), CipherError> {
         })
         .collect();
 
-    if org== ciphered {
+    if org == ciphered {
         return Ok(());
     } else {
         Err(CipherError {
-            expected: ciphered.to_string(),
+            expected: org,
         })
     }
 }
+
