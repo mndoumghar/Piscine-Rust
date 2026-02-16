@@ -27,4 +27,3 @@ pub fn cipher(original: &str, ciphered: &str) -> Result<(), CipherError> {
         })
     }
 }
-
