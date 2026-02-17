@@ -1,25 +1,22 @@
-use convert_case::{ Case, Casing };
+use convert_case::{Case, Casing};
 
 pub fn expected_variable(compared: &str, expected: &str) -> Option<String> {
     let dd = compared.to_lowercase();
     let cc = expected.to_lowercase();
 
-    if dd !=  dd.to_case(Case::Camel) &&  dd !=  dd.to_case(Case::Snake) {
-
-        return  None;
+    if dd != dd.to_case(Case::Camel) && dd != dd.to_case(Case::Snake) {
+        return None;
     }
 
     let distance = edit_distance(&dd, &cc);
 
     let max_len = std::cmp::max(dd.len(), cc.len());
     if max_len == 0 {
-
         return Some("100%".to_string());
     }
     let porc = 100 - (distance as isize * 100 / expected.len() as isize);
-    
-    if porc > 50 {
 
+    if porc > 50 {
         return Some(format!("{}%", porc));
     } else {
         return None;

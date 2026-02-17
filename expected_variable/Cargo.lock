@@ -12,10 +12,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "edit_distance"
+version = "0.1.0"
+
+[[package]]
 name = "expected_variable"
 version = "0.1.0"
 dependencies = [
  "convert_case",
+ "edit_distance",
 ]
 
 [[package]]
