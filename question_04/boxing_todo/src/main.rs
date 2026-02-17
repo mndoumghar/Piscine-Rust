@@ -30,6 +30,7 @@ fn main() {
     ];
 
     for (name, content) in files {
+        println!("{}   ---    {}",name,content);
         File::create(name)
             .unwrap()
             .write(content.as_bytes())
@@ -39,7 +40,7 @@ fn main() {
         match todos {
             Ok(list) => println!("{:?}", list),
             Err(e) => {
-                println!("{}: {:?}", e.to_string(), e.source());
+               / println!("{}: {:?}", e.to_string(), e.source());
             }
         }
     }
