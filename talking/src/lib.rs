@@ -18,10 +18,10 @@ pub fn talking(text: &str) -> &str {
         return "There is no need to yell, calm down!";
     } else if !checktouppper && count>1 {
         return "Sure."
-    } else if count ==1 {
+    } else if count = 1 {
         return "Interesting";
     } else {
-        "Just say something!"
+        "There is no need to yell, calm down!"
     }
 
 }
