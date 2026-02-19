@@ -6,7 +6,7 @@ pub fn talking(text: &str) -> &str {
     let mut checktouppper = true;
     let mut count = 0;
     for ch in text.split_whitespace() {
-        let mut first = ch.chars().next().expect("er");
+        let  first = ch.chars().next().expect("er");
         if first.is_lowercase() {
             checktouppper = false;
             count+=1;     
