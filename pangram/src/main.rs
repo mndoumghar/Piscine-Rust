@@ -7,3 +7,4 @@ fn main() {
     );
     println!("{}", is_pangram("this is not a pangram!"));
 }
+

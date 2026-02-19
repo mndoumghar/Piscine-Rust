@@ -9,3 +9,4 @@ pub fn is_pangram(s: &str) -> bool {
 
     res1.iter().all(|&seen| seen)
 }
+
