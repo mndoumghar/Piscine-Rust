@@ -1,6 +1,8 @@
 use talking::*;
 
 fn main() {
+    println!("{:?}", talking("7?"));
+
     println!("{:?}", talking("JUST DO IT!"));
     println!("{:?}", talking("Hello how are you?"));
     println!("{:?}", talking("WHAT'S GOING ON?"));
