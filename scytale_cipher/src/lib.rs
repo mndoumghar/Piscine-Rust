@@ -1,27 +1,35 @@
-pub fn scytale_cipher(message: &str, letters_per_turn: usize) -> String {
-    if message.is_empty() || letters_per_turn == 0 {
-        return message.to_string();
+pub fn scytale_cipher(message: &str, i: usize) -> String {
+    if i == 0 {
+        return "".to_string();
     }
-
-    let chars: Vec<char> = message.chars().collect();
-    let len = chars.len();
-
-    if len < letters_per_turn {
-        return message.to_string();
+    let size = message.len() as f64 / i as f64;
+    let mut spaces = 0;
+    if size.fract() != 0.0 {
+        let modulo = message.len() % i;
+        spaces = i - modulo;
     }
+    let mut word = message.to_string();
+    for _ in 0..spaces {
+        word.push(' ')
+    }
+    let new_size = word.len() / i;
 
-    let mut result = String::new();
-    let rows = letters_per_turn;
-    let cols = (len + rows - 1) / rows; 
-
-    for row in 0..rows {
-        for col in 0..cols {
-            let index = col * rows + row;
-            if index < len {
-                result.push(chars[index]);
-            }
+    let mut res = String::from("");
+    let mut result: Vec<Vec<char>> = Vec::new();
+    let mut jj = i.clone();
+    let mut kk = 0;
+    for _ in 0..new_size {
+        let mut arr: Vec<char> = word[kk..jj].chars().collect();
+        jj += i;
+        kk += i;
+        result.push(arr.clone());
+        arr.clear();
+    }
+    let mat_len = result.len();
+    for z in 0..i {
+        for y in 0..mat_len {
+            res.push(result[y][z]);
         }
     }
-
-    result
+    res.trim().to_string()
 }
