@@ -20,6 +20,7 @@ fn main() {
 
     list.remove_worker();
 
+    
     println!("{:?}", list);
 }
 
